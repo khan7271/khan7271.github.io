@@ -81,6 +81,8 @@ footer.chrome {
 
 .chrome-right { display: flex; align-items: center; gap: 8px; }
 
+.status-short { display: none; }
+
 .dot {
   width: 8px;
   height: 8px;
@@ -613,9 +615,12 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
 }
 
 @media (max-width: 640px) {
-  .chrome { font-size: 12px; padding: 18px 16px; }
+  .chrome { font-size: 11px; padding: 16px 14px; }
 
   .chrome-mid { display: none; }
+
+  .status-full { display: none; }
+  .status-short { display: inline; }
 
   footer.chrome { flex-wrap: wrap; row-gap: 8px; }
 
