@@ -32,7 +32,7 @@
   // Big wireframe torus knot — black, right side (sparse so it stays airy).
   var knot = new THREE.Mesh(
     new THREE.TorusKnotGeometry(1.9, 0.55, 80, 8),
-    new THREE.MeshBasicMaterial({ color: 0x000000, wireframe: true, transparent: true, opacity: 0.3 })
+    new THREE.MeshBasicMaterial({ color: 0x000000, wireframe: true, transparent: true, opacity: 0.18 })
   );
   knot.position.x = 2.6;
   scene.add(knot);
@@ -40,7 +40,7 @@
   // Small crimson icosahedron — floats on the left.
   var gem = new THREE.Mesh(
     new THREE.IcosahedronGeometry(0.85, 0),
-    new THREE.MeshBasicMaterial({ color: 0x2563eb, wireframe: true, transparent: true, opacity: 0.85 })
+    new THREE.MeshBasicMaterial({ color: 0x2563eb, wireframe: true, transparent: true, opacity: 0.5 })
   );
   gem.position.set(-3.4, 1.6, 0);
   scene.add(gem);
@@ -51,7 +51,7 @@
   for (var i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 14;
   var pgeo = new THREE.BufferGeometry();
   pgeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  var points = new THREE.Points(pgeo, new THREE.PointsMaterial({ color: 0x000000, size: 0.07, transparent: true, opacity: 0.75 }));
+  var points = new THREE.Points(pgeo, new THREE.PointsMaterial({ color: 0x000000, size: 0.05, transparent: true, opacity: 0.5 }));
   scene.add(points);
 
   // Mouse parallax.
@@ -69,15 +69,15 @@
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     var mobile = w < 640;
-    // On phones keep the 3D small and faint so the text stays readable.
-    knot.scale.setScalar(mobile ? 0.55 : 1);
-    knot.position.set(mobile ? 0 : 2.6, mobile ? -0.6 : 0, mobile ? -1 : 0);
-    knot.material.opacity = mobile ? 0.14 : 0.3;
-    gem.scale.setScalar(mobile ? 0.7 : 1);
-    gem.position.set(mobile ? 0.85 : -3.4, mobile ? 2.6 : 1.6, 0);
-    gem.material.opacity = mobile ? 0.5 : 0.85;
-    gemBaseY = mobile ? 2.6 : 1.6;
-    points.material.opacity = mobile ? 0.3 : 0.75;
+    // Keep the 3D small and faint so the text stays readable.
+    knot.scale.setScalar(mobile ? 0.55 : 0.7);
+    knot.position.set(mobile ? 0 : 3.2, mobile ? -0.6 : 0.3, mobile ? -1 : 0);
+    knot.material.opacity = mobile ? 0.14 : 0.18;
+    gem.scale.setScalar(mobile ? 0.7 : 0.6);
+    gem.position.set(mobile ? 0.85 : 4.0, mobile ? 2.6 : 2.8, 0);
+    gem.material.opacity = 0.5;
+    gemBaseY = mobile ? 2.6 : 2.8;
+    points.material.opacity = mobile ? 0.3 : 0.5;
   }
   window.addEventListener('resize', resize);
   window.addEventListener('load', resize);
