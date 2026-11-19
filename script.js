@@ -32,7 +32,7 @@
   // Big wireframe torus knot — black, right side.
   var knot = new THREE.Mesh(
     new THREE.TorusKnotGeometry(1.9, 0.55, 120, 12),
-    new THREE.MeshBasicMaterial({ color: 0x000000, wireframe: true, transparent: true, opacity: 0.28 })
+    new THREE.MeshBasicMaterial({ color: 0x000000, wireframe: true, transparent: true, opacity: 0.42 })
   );
   knot.position.x = 2.6;
   scene.add(knot);
@@ -51,7 +51,7 @@
   for (var i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 14;
   var pgeo = new THREE.BufferGeometry();
   pgeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  var points = new THREE.Points(pgeo, new THREE.PointsMaterial({ color: 0x000000, size: 0.05, transparent: true, opacity: 0.55 }));
+  var points = new THREE.Points(pgeo, new THREE.PointsMaterial({ color: 0x000000, size: 0.07, transparent: true, opacity: 0.75 }));
   scene.add(points);
 
   // Mouse parallax.
@@ -73,6 +73,7 @@
     gem.position.x = w < 640 ? -2.2 : -3.4;
   }
   window.addEventListener('resize', resize);
+  window.addEventListener('load', resize);
   resize();
 
   var clock = new THREE.Clock();
