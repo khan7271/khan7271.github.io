@@ -7,255 +7,165 @@
 <meta name="description" content="Tushar Khan, web3 content creator, learning AI agent building.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
+<canvas id="pinwheel" aria-hidden="true"></canvas>
 
-<header class="topbar">
+<header class="chrome">
   <a class="brand" href="#top">Tushar Khan</a>
-  <p class="topstatus"><span class="dot"></span>Open for collab Nov 2026</p>
+  <p class="chrome-mid">Portfolio V01</p>
+  <p class="chrome-right"><span class="dot"></span>Open for collab</p>
 </header>
 
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero reveal">
-    <svg class="bg-art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fff7ed"/>
-          <stop offset="0.35" stop-color="#fed7aa"/>
-          <stop offset="0.6" stop-color="#fca5a5"/>
-          <stop offset="0.8" stop-color="#f97316"/>
-          <stop offset="1" stop-color="#dc2626"/>
-        </linearGradient>
-      </defs>
-      <rect width="1200" height="800" fill="url(#sunset)"/>
-      <circle class="sunhalo" cx="600" cy="560" r="160" fill="#fca5a5" opacity="0.5"/>
-      <circle cx="600" cy="560" r="100" fill="#ef4444"/>
-      <g class="cloud" fill="#fff7ed" opacity="0.85">
-        <ellipse cx="580" cy="190" rx="110" ry="26"/>
-        <ellipse cx="640" cy="175" rx="70" ry="22"/>
-        <ellipse cx="520" cy="178" rx="55" ry="18"/>
-      </g>
-      <g class="cloud slow" fill="#fecdd3" opacity="0.8">
-        <ellipse cx="650" cy="320" rx="90" ry="24"/>
-        <ellipse cx="700" cy="305" rx="60" ry="18"/>
-        <ellipse cx="600" cy="308" rx="48" ry="16"/>
-      </g>
-      <polygon points="0,800 0,640 200,580 420,650 640,590 860,660 1060,600 1200,650 1200,800" fill="#7f1d1d" opacity="0.8"/>
-      <polygon points="0,800 0,700 180,660 380,700 560,670 760,710 960,680 1200,720 1200,800" fill="#450a0a" opacity="0.9"/>
-      <g fill="#111827">
-        <circle cx="600" cy="528" r="14"/>
-        <path d="M587 544 Q600 538 613 544 L617 570 Q620 615 614 678 L586 678 Q580 615 583 570 Z"/>
-      </g>
-      <g fill="#111827">
-        <g class="grass">
-          <path d="M408 693 Q404 668 416 648 Q412 670 422 693 Z"/>
-          <path d="M426 693 Q426 666 438 646 Q432 670 442 693 Z"/>
-          <path d="M390 693 Q384 672 396 654 Q394 674 402 693 Z"/>
-        </g>
-        <g class="grass slow">
-          <path d="M528 673 Q524 648 536 628 Q532 650 542 673 Z"/>
-          <path d="M546 673 Q548 646 560 626 Q554 650 564 673 Z"/>
-          <path d="M510 673 Q504 652 516 634 Q514 654 522 673 Z"/>
-        </g>
-        <g class="grass fast">
-          <path d="M653 691 Q649 666 661 646 Q657 668 667 691 Z"/>
-          <path d="M671 691 Q673 664 685 644 Q679 668 689 691 Z"/>
-          <path d="M635 691 Q629 670 641 652 Q639 672 647 691 Z"/>
-        </g>
-        <g class="grass slow">
-          <path d="M748 710 Q744 684 758 662 Q754 686 764 710 Z"/>
-          <path d="M766 710 Q768 682 782 660 Q776 686 786 710 Z"/>
-          <path d="M730 710 Q724 688 736 668 Q734 690 742 710 Z"/>
-        </g>
-      </g>
-      <g fill="#fda4af">
-        <ellipse class="petal" cx="550" cy="420" rx="9" ry="5"/>
-        <ellipse class="petal slow" cx="680" cy="380" rx="9" ry="5"/>
-        <ellipse class="petal" cx="620" cy="300" rx="9" ry="5"/>
-        <ellipse class="petal slow" cx="480" cy="480" rx="9" ry="5"/>
-      </g>
-    </svg>
-    <div class="profile">
-      <img class="avatar" src="profile.jpg" alt="Tushar Khan" width="96" height="96">
-      <div class="profile-meta">
-        <p class="profile-name">Tushar Khan</p>
+  <section class="hero" id="hero">
+    <div class="cascade">
+      <p class="cas-name" data-scramble>Tushar Khan</p>
+      <p class="cas-role" data-scramble>Web3 Content Creator</p>
+      <p class="cas-role cas-cycle" id="cycleRole" data-cycle="AI Agent Builder|Learning AI Agent Building">AI Agent Builder</p>
+      <div class="cas-mission">
+        <p data-scramble>I'm a web3 content creator,</p>
+        <p data-scramble>learning AI agent building,</p>
+        <p data-scramble>creating web3 content</p>
+        <p data-scramble>and video and gaming content.</p>
       </div>
+      <p class="cas-avail" data-scramble>Available for collab<br>November 2026</p>
+      <button class="copy-email" type="button" data-email="khantussar7@gmail.com">khantussar7@gmail.com</button>
     </div>
-    <p class="kicker">Tushar Khan Web3 Content Creator · AI Agent Builder</p>
-    <h1 class="display">Hello, i&rsquo;m<br>Tushar<span class="accent">.</span></h1>
-    <p class="herosub">creating <span class="hl">web3 content</span> and video and gaming content.</p>
-    <ul class="socials">
-      <li><a class="social-card" href="https://x.com/TusharDeFi" target="_blank" rel="noopener">
-        <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span>
-        <span class="social-text"><span class="social-name">X (Twitter)</span><span class="social-handle">@TusharDeFi</span></span>
-        <span class="social-arrow" aria-hidden="true">↗</span>
-      </a></li>
-      <li><a class="social-card" href="https://t.me/khantuussar7" target="_blank" rel="noopener">
-        <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
-        <span class="social-text"><span class="social-name">Telegram</span><span class="social-handle">@khantuussar7</span></span>
-        <span class="social-arrow" aria-hidden="true">↗</span>
-      </a></li>
-      <li><a class="social-card" href="https://discord.com/app" target="_blank" rel="noopener">
-        <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885 1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.547 18.058a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.007-.13c.126-.094.251-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.076.076 0 0 1-.006.129 12.3 12.3 0 0 1-1.874.892.077.077 0 0 0-.041.107c.36.697.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03ZM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.418 0 1.334-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z"/></svg></span>
-        <span class="social-text"><span class="social-name">Discord</span><span class="social-handle">tussar.eth</span></span>
-        <span class="social-arrow" aria-hidden="true">↗</span>
-      </a></li>
-    </ul>
+    <a class="glimpse" href="#work">
+      <span class="glimpse-card" id="glimpseCard">
+        <span class="glimpse-num">01</span>
+        <span class="glimpse-title">Punk Agent Arcade</span>
+        <span class="glimpse-tag">Game</span>
+      </span>
+      <span class="glimpse-cap"><span>A look at work</span><span>01 of 06</span></span>
+    </a>
+    <h1 class="giant" data-scramble>Web3 Creator</h1>
   </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>WEB3 CONTENT ✦ GAME ✦ TRADING BOT ✦ ON CHAIN ✦ AI AGENT ✦&nbsp;</span>
-      <span>WEB3 CONTENT ✦ GAME ✦ TRADING BOT ✦ ON CHAIN ✦ AI AGENT ✦&nbsp;</span>
-    </div>
-  </div>
 
   <!-- 01 ABOUT -->
-  <section class="section reveal" id="intro">
-    <p class="secnum">01 / About</p>
-    <p class="intro">I'm a <span class="hl">web3 content creator</span>, learning <span class="hl">AI agent building</span>.</p>
-    <p class="currently"><strong>Currently</strong> building Punk Agent Arcade for the Binance Agent ID Hackathon: a game where Agent ID holder play, earn point, and land on an on chain leaderboard.</p>
-    <div class="stats">
-      <div class="stat">
-        <p class="stat-num">10K<span class="accent">+</span></p>
-        <p class="stat-label">Follower on X</p>
+  <section class="about reveal" id="intro">
+    <p class="about-label" data-scramble>Hello, I'm Tushar</p>
+    <img class="portrait" src="profile.jpg" alt="Tushar Khan" width="310" height="310">
+    <div class="about-body">
+      <p class="intro">I'm a <span class="hl">web3 content creator</span>, learning <span class="hl">AI agent building</span>.</p>
+      <p class="currently"><strong>Currently</strong> building Punk Agent Arcade for the Binance Agent ID Hackathon: a game where Agent ID holder play, earn point, and land on an on chain leaderboard.</p>
+      <div class="stats">
+        <div class="stat">
+          <p class="stat-num">10K+</p>
+          <p class="stat-label">Follower on X</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">6</p>
+          <p class="stat-label">Project shipped</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">2</p>
+          <p class="stat-label">Binance Agent ID</p>
+        </div>
       </div>
-      <div class="stat">
-        <p class="stat-num">6</p>
-        <p class="stat-label">Project shipped</p>
-      </div>
-      <div class="stat">
-        <p class="stat-num">2</p>
-        <p class="stat-label">Binance Agent ID</p>
-      </div>
+      <p class="stacklabel">Usually using</p>
+      <ul class="stacklist">
+        <li>Luau</li>
+        <li>Solidity</li>
+        <li>TypeScript</li>
+        <li>Python</li>
+        <li>Rojo</li>
+        <li>Foundry</li>
+        <li>BNB Chain</li>
+        <li>AI agent</li>
+      </ul>
+      <p class="based">Currently based in Bangladesh (GMT+6). Available worldwide.</p>
+      <button class="copy-email" type="button" data-email="khantussar7@gmail.com">khantussar7@gmail.com</button>
     </div>
-    <p class="stack"><span class="stacklabel">usually using</span> Luau · Solidity · TypeScript · Python · Rojo · Foundry · BNB Chain · AI agent</p>
-    <p class="based">Currently based in Bangladesh (GMT+6). Available worldwide. Open for collab.</p>
   </section>
 
-  <!-- 02 SERVICES -->
+  <!-- 02 SERVICE -->
   <section class="section reveal" id="services">
-    <p class="secnum">02 / What I do</p>
-    <h2 class="sectitle">Service</h2>
-    <ul class="services">
-      <li class="service reveal">
-        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg></span>
-        <h3>Web3 Content</h3>
-        <p>Video, thread and post that explain web3 simply from a creator building on chain.</p>
-        <p class="tags"><span>Video</span><span>Thread</span><span>UGC</span></p>
+    <p class="seclabel" data-scramble>02 · What I do</p>
+    <h2 class="sectitle" data-scramble>Service</h2>
+    <ul class="rows">
+      <li class="row">
+        <div class="row-main">
+          <h3>Web3 Content</h3>
+          <p>Video, thread and post that explain web3 simply from a creator building on chain.</p>
+        </div>
+        <p class="row-side">Video / Thread / UGC</p>
       </li>
-      <li class="service reveal">
-        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg></span>
-        <h3>AI Agent Building</h3>
-        <p>Game, bot and on chain experience built with AI agent shipped in public, verified on chain.</p>
-        <p class="tags"><span>Solidity</span><span>TypeScript</span><span>Python</span></p>
+      <li class="row">
+        <div class="row-main">
+          <h3>AI Agent Building</h3>
+          <p>Game, bot and on chain experience built with AI agent shipped in public, verified on chain.</p>
+        </div>
+        <p class="row-side">Solidity / TypeScript / Python</p>
       </li>
-      <li class="service reveal">
-        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>
-        <h3>Game &amp; Bot</h3>
-        <p>Playable game and trading bot from Roblox world to 24h race bot and live forecast.</p>
-        <p class="tags"><span>Luau</span><span>Rojo</span><span>Three.js</span></p>
+      <li class="row">
+        <div class="row-main">
+          <h3>Game &amp; Bot</h3>
+          <p>Playable game and trading bot from Roblox world to 24h race bot and live forecast.</p>
+        </div>
+        <p class="row-side">Luau / Rojo / Three.js</p>
       </li>
     </ul>
   </section>
 
   <!-- 03 SELECTED WORK -->
-  <section class="section-dark reveal" id="work">
-    <div class="section-inner">
-      <p class="secnum">03 / Selected work</p>
-      <h2 class="sectitle">Selected work <span class="count">01 06</span></h2>
-      <ol class="worklist">
-
-        <li class="workcard reveal">
-          <div class="workcover cover-1"><span class="workcover-num">01</span><span class="workcover-label">Game</span></div>
-          <div class="workbody">
-            <h3>Punk Agent Arcade</h3>
-            <p>Endless runner for Binance Agent ID holder, score on chain.</p>
-            <p class="tags"><span>Solidity</span><span>TypeScript</span><span>BNB Chain</span></p>
-            <a class="open" href="https://github.com/khan7271/punk-agent-arcade" target="_blank" rel="noopener">Open <span aria-hidden="true">↗</span></a>
-          </div>
-        </li>
-
-        <li class="workcard reveal">
-          <div class="workcover cover-2"><span class="workcover-num">02</span><span class="workcover-label">Roblox</span></div>
-          <div class="workbody">
-            <h3>Brainrot Bazaar</h3>
-            <p>3D Roblox brainrot game for the make.fun bounty.</p>
-            <p class="tags"><span>Luau</span><span>Rojo</span></p>
-            <a class="open" href="https://github.com/khan7271/brainrot-bazaar" target="_blank" rel="noopener">Open <span aria-hidden="true">↗</span></a>
-          </div>
-        </li>
-
-        <li class="workcard reveal">
-          <div class="workcover cover-3"><span class="workcover-num">03</span><span class="workcover-label">Shooter</span></div>
-          <div class="workbody">
-            <h3>VOIDSTORM</h3>
-            <p>Neon arena space shooter, make.fun best game entry.</p>
-            <p class="tags"><span>TypeScript</span><span>Three.js</span></p>
-            <a class="open" href="https://github.com/khan7271/voidstorm" target="_blank" rel="noopener">Open <span aria-hidden="true">↗</span></a>
-          </div>
-        </li>
-
-        <li class="workcard reveal">
-          <div class="workcover cover-4"><span class="workcover-num">04</span><span class="workcover-label">Open world</span></div>
-          <div class="workbody">
-            <h3>Coral Bay</h3>
-            <p>Open world crime story, GTA6 bounty entry.</p>
-            <p class="tags"><span>TypeScript</span></p>
-            <a class="open" href="https://github.com/khan7271/coral-bay" target="_blank" rel="noopener">Open <span aria-hidden="true">↗</span></a>
-          </div>
-        </li>
-
-        <li class="workcard reveal">
-          <div class="workcover cover-5"><span class="workcover-num">05</span><span class="workcover-label">Trading bot</span></div>
-          <div class="workbody">
-            <h3>BTC Recovery Bot</h3>
-            <p>Trough recovery cbBTC trading bot, 24h race bounty.</p>
-            <p class="tags"><span>Python</span></p>
-            <a class="open" href="https://github.com/khan7271/btc-recovery-bot" target="_blank" rel="noopener">Open <span aria-hidden="true">↗</span></a>
-          </div>
-        </li>
-
-        <li class="workcard reveal">
-          <div class="workcover cover-6"><span class="workcover-num">06</span><span class="workcover-label">Forecast</span></div>
-          <div class="workbody">
-            <h3>GTA VI Twitch Forecast</h3>
-            <p>Launch day Twitch viewer forecast, hour by hour.</p>
-            <p class="tags"><span>Python</span></p>
-            <a class="open" href="https://github.com/khan7271/gta6-twitch-forecast" target="_blank" rel="noopener">Open <span aria-hidden="true">↗</span></a>
-          </div>
-        </li>
-
-      </ol>
-    </div>
+  <section class="section reveal" id="work">
+    <p class="seclabel" data-scramble>03 · Selected work</p>
+    <h2 class="sectitle" data-scramble>Selected work</h2>
+    <ol class="rows workrows">
+      <li class="row workrow" tabindex="0" data-name="Punk Agent Arcade" data-type="Game" data-stack="Solidity / TypeScript / BNB Chain" data-desc="Endless runner for Binance Agent ID holder, score on chain." data-link="https://github.com/khan7271/punk-agent-arcade" data-live="https://khan7271.github.io/punk-agent-arcade/">
+        <div class="row-main"><h3>Punk Agent Arcade</h3></div>
+        <p class="row-side">Solidity / TypeScript / BNB Chain</p>
+      </li>
+      <li class="row workrow" tabindex="0" data-name="Brainrot Bazaar" data-type="Roblox" data-stack="Luau / Rojo" data-desc="3D Roblox brainrot game for the make.fun bounty." data-link="https://github.com/khan7271/brainrot-bazaar">
+        <div class="row-main"><h3>Brainrot Bazaar</h3></div>
+        <p class="row-side">Luau / Rojo</p>
+      </li>
+      <li class="row workrow" tabindex="0" data-name="VOIDSTORM" data-type="Shooter" data-stack="TypeScript / Three.js" data-desc="Neon arena space shooter, make.fun best game entry." data-link="https://github.com/khan7271/voidstorm">
+        <div class="row-main"><h3>VOIDSTORM</h3></div>
+        <p class="row-side">TypeScript / Three.js</p>
+      </li>
+      <li class="row workrow" tabindex="0" data-name="Coral Bay" data-type="Open world" data-stack="TypeScript" data-desc="Open world crime story, GTA6 bounty entry." data-link="https://github.com/khan7271/coral-bay">
+        <div class="row-main"><h3>Coral Bay</h3></div>
+        <p class="row-side">TypeScript</p>
+      </li>
+      <li class="row workrow" tabindex="0" data-name="BTC Recovery Bot" data-type="Trading bot" data-stack="Python" data-desc="Trough recovery cbBTC trading bot, 24h race bounty." data-link="https://github.com/khan7271/btc-recovery-bot">
+        <div class="row-main"><h3>BTC Recovery Bot</h3></div>
+        <p class="row-side">Python</p>
+      </li>
+      <li class="row workrow" tabindex="0" data-name="GTA VI Twitch Forecast" data-type="Forecast" data-stack="Python" data-desc="Launch day Twitch viewer forecast, hour by hour." data-link="https://github.com/khan7271/gta6-twitch-forecast">
+        <div class="row-main"><h3>GTA VI Twitch Forecast</h3></div>
+        <p class="row-side">Python</p>
+      </li>
+    </ol>
   </section>
 
   <!-- 04 WORKFLOW -->
   <section class="section reveal" id="workflow">
-    <p class="secnum">04 / Workflow</p>
-    <h2 class="sectitle">How I work</h2>
+    <p class="seclabel" data-scramble>04 · Workflow</p>
+    <h2 class="sectitle" data-scramble>How I work</h2>
     <ol class="steps">
-      <li class="step reveal">
+      <li class="step">
         <span class="stepnum">01</span>
         <h3>Spot it</h3>
         <p>Bounty, collab or opportunity.</p>
       </li>
-      <li class="step reveal">
+      <li class="step">
         <span class="stepnum">02</span>
         <h3>Build it</h3>
         <p>With an AI agent, in the open.</p>
       </li>
-      <li class="step reveal">
+      <li class="step">
         <span class="stepnum">03</span>
         <h3>Test it live</h3>
         <p>On chain or in Studio, verified not promised.</p>
       </li>
-      <li class="step reveal">
+      <li class="step">
         <span class="stepnum">04</span>
         <h3>Ship it</h3>
         <p>Submit, publish, share.</p>
@@ -263,43 +173,78 @@
     </ol>
   </section>
 
+  <!-- LAB TEASER -->
+  <section class="lab" id="lab">
+    <div class="lab-words" aria-hidden="true">
+      <span style="--x:10%;--y:16%" data-scramble>Web3 Content</span>
+      <span style="--x:66%;--y:10%" data-scramble>Game</span>
+      <span style="--x:76%;--y:60%" data-scramble>Trading Bot</span>
+      <span style="--x:6%;--y:56%" data-scramble>On Chain</span>
+      <span style="--x:36%;--y:76%" data-scramble>AI Agent</span>
+      <span style="--x:54%;--y:26%" data-scramble>Craft</span>
+      <span style="--x:20%;--y:36%" data-scramble>Detail</span>
+      <span style="--x:84%;--y:30%" data-scramble>Motion</span>
+    </div>
+    <button class="portal" type="button" id="portal" aria-label="Scroll to contact">
+      <span class="portal-label">Scroll to contact</span>
+      <span class="portal-box"></span>
+      <span class="portal-pct" id="labPct">0%</span>
+    </button>
+  </section>
+
   <!-- 05 CONTACT -->
-  <section class="section reveal" id="contact">
-    <p class="secnum">05 / Contact</p>
-    <h2 class="sectitle">Let us build together</h2>
+  <section class="section contact" id="contact">
+    <p class="seclabel" data-scramble>05 · Contact</p>
+    <h2 class="sectitle" data-scramble>Let us build together</h2>
     <p class="contactline">Currently based in Bangladesh (GMT+6). Available worldwide. Open for collab content, build, bounty.</p>
-    <ul class="socials">
-      <li><a class="social-card" href="https://x.com/TusharDeFi" target="_blank" rel="noopener">
-        <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span>
-        <span class="social-text"><span class="social-name">X (Twitter)</span><span class="social-handle">@TusharDeFi</span></span>
-        <span class="social-arrow" aria-hidden="true">↗</span>
+    <ul class="rows">
+      <li><a class="row" href="https://x.com/TusharDeFi" target="_blank" rel="noopener">
+        <div class="row-main"><h3>X (Twitter)</h3></div>
+        <p class="row-side">@TusharDeFi ↗</p>
       </a></li>
-      <li><a class="social-card" href="https://t.me/khantuussar7" target="_blank" rel="noopener">
-        <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
-        <span class="social-text"><span class="social-name">Telegram</span><span class="social-handle">@khantuussar7</span></span>
-        <span class="social-arrow" aria-hidden="true">↗</span>
+      <li><a class="row" href="https://t.me/khantuussar7" target="_blank" rel="noopener">
+        <div class="row-main"><h3>Telegram</h3></div>
+        <p class="row-side">@khantuussar7 ↗</p>
       </a></li>
-      <li><a class="social-card" href="https://discord.com/app" target="_blank" rel="noopener">
-        <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885 1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.547 18.058a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.007-.13c.126-.094.251-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.076.076 0 0 1-.006.129 12.3 12.3 0 0 1-1.874.892.077.077 0 0 0-.041.107c.36.697.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03ZM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.418 0 1.334-.956 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.176 1.095 2.157 2.418 0 1.334-.946 2.419-2.157 2.419Z"/></svg></span>
-        <span class="social-text"><span class="social-name">Discord</span><span class="social-handle">tussar.eth</span></span>
-        <span class="social-arrow" aria-hidden="true">↗</span>
+      <li><a class="row" href="https://discord.com/app" target="_blank" rel="noopener">
+        <div class="row-main"><h3>Discord</h3></div>
+        <p class="row-side">tussar.eth ↗</p>
       </a></li>
     </ul>
   </section>
 
 </main>
 
-<footer class="footer">
+<footer class="chrome chrome-foot">
+  <button class="copy-email foot-email" type="button" data-email="khantussar7@gmail.com"><span class="full">khantussar7@gmail.com</span><span class="short">Email</span></button>
   <nav class="footnav">
     <a href="#intro">About</a>
     <a href="#services">Service</a>
     <a href="#work">Work</a>
     <a href="#contact">Contact</a>
   </nav>
-  <p>© 2026 Tushar Khan</p>
-  <a href="#top" class="totop">Back to top ↑</a>
+  <p class="credit">© 2026 Tushar Khan</p>
 </footer>
 
-<script src="script.js?v=6"></script>
+<!-- WORK DETAIL -->
+<div class="detail" id="detail" hidden>
+  <div class="detail-inner">
+    <p class="detail-meta"><span>Work</span><span id="detailCount">01 of 06</span></p>
+    <h3 class="detail-name" id="detailName"></h3>
+    <dl class="detail-dl">
+      <div><dt>Name</dt><dd id="detailName2"></dd></div>
+      <div><dt>Type</dt><dd id="detailType"></dd></div>
+      <div><dt>Stack</dt><dd id="detailStack"></dd></div>
+    </dl>
+    <p class="detail-desc" id="detailDesc"></p>
+    <p class="detail-links"><a id="detailOpen" href="#" target="_blank" rel="noopener">Open ↗</a><a id="detailLive" href="#" target="_blank" rel="noopener">Live ↗</a></p>
+    <div class="detail-nav">
+      <button type="button" id="detailNext">Next work →</button>
+      <button type="button" id="detailClose">Close ×</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js?v=7"></script>
 </body>
 </html>
