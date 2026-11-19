@@ -2,11 +2,11 @@
    huge display type, generous whitespace, numbered sections, project rows. */
 
 :root {
-  --bg: #54afa7;
-  --ink: #000000;
-  --muted: rgba(0, 0, 0, 0.62);
-  --line: rgba(0, 0, 0, 0.16);
-  --accent: #e60d3f;
+  --bg: #ffffff;
+  --ink: #111111;
+  --muted: rgba(0, 0, 0, 0.6);
+  --line: rgba(0, 0, 0, 0.12);
+  --accent: #2563eb;
   --max: 1200px;
   --font-display: "Syne", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-body: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -17,9 +17,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: linear-gradient(115deg, #53b0a8, #54afa7 35%, #57aca6 65%, #5aa9a3);
-  background-size: 220% 220%;
-  animation: tealdrift 24s ease-in-out infinite alternate;
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
@@ -77,12 +75,8 @@ a:hover { color: var(--accent); }
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(230, 13, 63, 0.45); }
-  50% { box-shadow: 0 0 0 6px rgba(230, 13, 63, 0); }
-}
-@keyframes tealdrift {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45); }
+  50% { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
 }
 
 /* ---------- layout ---------- */
@@ -577,12 +571,12 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
   padding: 5px 12px;
   white-space: nowrap;
 }
-.cover-1 { background: linear-gradient(135deg, #e60d3f, #7b031d); }
-.cover-2 { background: linear-gradient(135deg, #54afa7, #155e57); }
-.cover-3 { background: linear-gradient(135deg, #2b2b2b, #000000); }
-.cover-4 { background: linear-gradient(135deg, #ff8a00, #e60d3f); }
-.cover-5 { background: linear-gradient(135deg, #f2b705, #c22727); }
-.cover-6 { background: linear-gradient(135deg, #7c3aed, #e60d3f); }
+.cover-1 { background: linear-gradient(135deg, #2563eb, #1e40af); }
+.cover-2 { background: linear-gradient(135deg, #0891b2, #155e75); }
+.cover-3 { background: linear-gradient(135deg, #334155, #0f172a); }
+.cover-4 { background: linear-gradient(135deg, #ea580c, #9a3412); }
+.cover-5 { background: linear-gradient(135deg, #ca8a04, #854d0e); }
+.cover-6 { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
 .workbody { padding: 24px; }
 .workbody h3 {
   font-family: var(--font-display);

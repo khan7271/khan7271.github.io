@@ -40,7 +40,7 @@
   // Small crimson icosahedron — floats on the left.
   var gem = new THREE.Mesh(
     new THREE.IcosahedronGeometry(0.85, 0),
-    new THREE.MeshBasicMaterial({ color: 0xe60d3f, wireframe: true, transparent: true, opacity: 0.85 })
+    new THREE.MeshBasicMaterial({ color: 0x2563eb, wireframe: true, transparent: true, opacity: 0.85 })
   );
   gem.position.set(-3.4, 1.6, 0);
   scene.add(gem);
