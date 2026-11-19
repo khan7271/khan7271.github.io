@@ -50,14 +50,14 @@ a:hover { color: var(--accent); }
   text-transform: uppercase;
 }
 .brand sup { font-size: 10px; font-weight: 400; }
-.topnav { display: flex; gap: 28px; }
-.topnav a {
+.footnav { display: flex; gap: 28px; flex-wrap: wrap; }
+.footnav a {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.7);
 }
-.topnav a:hover { color: var(--accent); }
+.footnav a:hover { color: var(--accent); }
 .topstatus {
   font-size: 13px;
   text-transform: uppercase;
@@ -436,7 +436,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
   .steps { grid-template-columns: 1fr; }
   .workrow { grid-template-columns: 36px 1fr; }
   .workrow .open { grid-column: 2; margin-top: 12px; }
-  .topnav { gap: 18px; }
+  .footnav { gap: 18px; }
   .avatar { width: 72px; height: 72px; }
   .marquee-track span { font-size: 16px; }
   .display { font-size: 12.5vw; line-height: 0.95; }
