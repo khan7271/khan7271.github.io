@@ -29,7 +29,7 @@
   var camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
   camera.position.z = 9;
 
-  // Big wireframe torus knot — black, right side (sparse so it stays airy).
+  // Big wireframe torus knot, black, right side (sparse so it stays airy).
   var knot = new THREE.Mesh(
     new THREE.TorusKnotGeometry(1.9, 0.55, 80, 8),
     new THREE.MeshBasicMaterial({ color: 0x000000, wireframe: true, transparent: true, opacity: 0.18 })
@@ -37,7 +37,7 @@
   knot.position.x = 2.6;
   scene.add(knot);
 
-  // Small crimson icosahedron — floats on the left.
+  // Small blue icosahedron, floats on the left.
   var gem = new THREE.Mesh(
     new THREE.IcosahedronGeometry(0.85, 0),
     new THREE.MeshBasicMaterial({ color: 0x2563eb, wireframe: true, transparent: true, opacity: 0.5 })
