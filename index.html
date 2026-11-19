@@ -8,12 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#top">Tushar Khan<sup>®</sup></a>
+  <a class="brand" href="#top">Tushar Khan</a>
   <p class="topstatus"><span class="dot"></span>Open for collab Nov 2026</p>
 </header>
 
@@ -23,63 +23,67 @@
   <section class="hero reveal">
     <svg class="bg-art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#f0f9ff"/>
-          <stop offset="0.55" stop-color="#bfdbfe"/>
-          <stop offset="1" stop-color="#c7d2fe"/>
+        <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff7ed"/>
+          <stop offset="0.35" stop-color="#fed7aa"/>
+          <stop offset="0.6" stop-color="#fca5a5"/>
+          <stop offset="0.8" stop-color="#f97316"/>
+          <stop offset="1" stop-color="#dc2626"/>
         </linearGradient>
       </defs>
-      <rect width="1200" height="800" fill="url(#sky)"/>
-      <circle cx="1020" cy="130" r="95" fill="#2563eb" opacity="0.25"/>
-      <circle cx="1020" cy="130" r="55" fill="#ffffff" opacity="0.95"/>
-      <g fill="#2563eb">
-        <circle cx="120" cy="90" r="3.5" opacity="0.8"/>
-        <circle cx="300" cy="60" r="3" opacity="0.85"/>
-        <circle cx="480" cy="120" r="3.5" opacity="0.75"/>
-        <circle cx="700" cy="70" r="2.5" opacity="0.8"/>
-        <circle cx="880" cy="200" r="3.5" opacity="0.7"/>
-        <circle cx="60" cy="220" r="3" opacity="0.75"/>
+      <rect width="1200" height="800" fill="url(#sunset)"/>
+      <circle class="sunhalo" cx="820" cy="540" r="130" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="820" cy="540" r="65" fill="#ef4444"/>
+      <g class="cloud" fill="#fff7ed" opacity="0.85">
+        <ellipse cx="240" cy="220" rx="110" ry="26"/>
+        <ellipse cx="300" cy="205" rx="70" ry="22"/>
+        <ellipse cx="180" cy="208" rx="55" ry="18"/>
       </g>
-      <g fill="#7c3aed">
-        <circle cx="200" cy="160" r="3" opacity="0.8"/>
-        <circle cx="560" cy="60" r="3.5" opacity="0.75"/>
-        <circle cx="940" cy="290" r="2.5" opacity="0.8"/>
-        <circle cx="420" cy="210" r="2.5" opacity="0.7"/>
+      <g class="cloud slow" fill="#fecdd3" opacity="0.8">
+        <ellipse cx="950" cy="300" rx="120" ry="28"/>
+        <ellipse cx="1010" cy="283" rx="75" ry="22"/>
+        <ellipse cx="890" cy="286" rx="58" ry="18"/>
       </g>
-      <g stroke="#2563eb" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7">
-        <path d="M180 300 Q192 290 204 300 Q216 290 228 300"/>
-        <path d="M640 240 Q650 232 660 240 Q670 232 680 240"/>
-        <path d="M820 340 Q830 332 840 340 Q850 332 860 340"/>
+      <g stroke="#450a0a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7">
+        <path d="M180 180 Q192 170 204 180 Q216 170 228 180"/>
+        <path d="M640 150 Q650 142 660 150 Q670 142 680 150"/>
+        <path d="M420 260 Q430 252 440 260 Q450 252 460 260"/>
       </g>
-      <g>
-        <ellipse cx="240" cy="330" rx="120" ry="34" fill="#ffffff" opacity="0.95"/>
-        <ellipse cx="300" cy="310" rx="80" ry="30" fill="#ffffff" opacity="0.95"/>
-        <ellipse cx="180" cy="312" rx="60" ry="24" fill="#ffffff" opacity="0.95"/>
-        <ellipse cx="250" cy="352" rx="110" ry="18" fill="#93c5fd" opacity="0.6"/>
+      <polygon points="0,800 0,640 200,580 420,650 640,590 860,660 1060,600 1200,650 1200,800" fill="#7f1d1d" opacity="0.8"/>
+      <polygon points="0,800 0,700 180,660 380,700 560,670 760,710 960,680 1200,720 1200,800" fill="#450a0a" opacity="0.9"/>
+      <g fill="#111827">
+        <circle cx="980" cy="533" r="14"/>
+        <path d="M967 549 Q980 543 993 549 L997 575 Q1000 620 994 683 L966 683 Q960 620 963 575 Z"/>
       </g>
-      <g>
-        <ellipse cx="900" cy="420" rx="130" ry="36" fill="#ffffff" opacity="0.95"/>
-        <ellipse cx="970" cy="398" rx="85" ry="30" fill="#ffffff" opacity="0.95"/>
-        <ellipse cx="830" cy="400" rx="65" ry="24" fill="#ffffff" opacity="0.95"/>
-        <ellipse cx="910" cy="444" rx="120" ry="18" fill="#93c5fd" opacity="0.6"/>
+      <g fill="#111827">
+        <g class="grass">
+          <path d="M238 674 Q234 650 246 630 Q242 652 252 674 Z"/>
+          <path d="M256 674 Q256 648 268 628 Q262 652 272 674 Z"/>
+          <path d="M220 674 Q214 654 226 636 Q224 656 232 674 Z"/>
+        </g>
+        <g class="grass slow">
+          <path d="M468 683 Q464 658 478 638 Q474 660 484 683 Z"/>
+          <path d="M486 683 Q488 656 500 636 Q494 660 504 683 Z"/>
+          <path d="M450 683 Q444 662 456 644 Q454 664 462 683 Z"/>
+        </g>
+        <g class="grass fast">
+          <path d="M748 710 Q744 684 758 662 Q754 686 764 710 Z"/>
+          <path d="M766 710 Q768 682 782 660 Q776 686 786 710 Z"/>
+          <path d="M730 710 Q724 688 736 668 Q734 690 742 710 Z"/>
+        </g>
+        <g class="grass slow">
+          <path d="M1088 703 Q1084 678 1098 658 Q1094 680 1104 703 Z"/>
+          <path d="M1106 703 Q1108 676 1122 656 Q1116 680 1126 703 Z"/>
+          <path d="M1070 703 Q1064 682 1076 664 Q1074 684 1082 703 Z"/>
+        </g>
       </g>
-      <g>
-        <ellipse cx="560" cy="520" rx="100" ry="28" fill="#ffffff" opacity="0.9"/>
-        <ellipse cx="610" cy="502" rx="65" ry="24" fill="#ffffff" opacity="0.9"/>
-        <ellipse cx="570" cy="540" rx="95" ry="15" fill="#93c5fd" opacity="0.55"/>
-      </g>
-      <polygon points="0,800 0,660 180,560 340,660 520,580 700,670 880,600 1060,680 1200,620 1200,800" fill="#a5b4fc" opacity="0.7"/>
-      <polygon points="0,800 0,720 160,640 320,720 480,650 660,730 840,660 1020,730 1200,680 1200,800" fill="#60a5fa" opacity="0.75"/>
-      <g fill="#c4b5fd" opacity="0.9">
-        <ellipse cx="150" cy="480" rx="9" ry="5" transform="rotate(30 150 480)"/>
-        <ellipse cx="420" cy="380" rx="9" ry="5" transform="rotate(-20 420 380)"/>
-        <ellipse cx="760" cy="480" rx="9" ry="5" transform="rotate(45 760 480)"/>
-        <ellipse cx="1050" cy="540" rx="9" ry="5" transform="rotate(-30 1050 540)"/>
-        <ellipse cx="330" cy="600" rx="9" ry="5" transform="rotate(15 330 600)"/>
-        <ellipse cx="950" cy="180" rx="9" ry="5" transform="rotate(60 950 180)"/>
+      <g fill="#fda4af">
+        <ellipse class="petal" cx="300" cy="420" rx="9" ry="5"/>
+        <ellipse class="petal slow" cx="700" cy="350" rx="9" ry="5"/>
+        <ellipse class="petal" cx="1000" cy="450" rx="9" ry="5"/>
+        <ellipse class="petal slow" cx="520" cy="300" rx="9" ry="5"/>
       </g>
     </svg>
-    <canvas id="bg3d" aria-hidden="true"></canvas>
     <div class="profile">
       <img class="avatar" src="profile.jpg" alt="Tushar Khan boss.ai" width="96" height="96">
       <div class="profile-meta">
@@ -302,7 +306,6 @@
   <a href="#top" class="totop">Back to top ↑</a>
 </footer>
 
-<script src="three.min.js"></script>
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
