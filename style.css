@@ -128,7 +128,7 @@ main { position: relative; }
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 110px var(--pad) 0;
+  padding: 110px var(--pad) 72px;
 }
 
 .cascade {
@@ -238,15 +238,14 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   width: 100vw;
   margin-left: calc(50% - 50vw);
   text-align: center;
-  font-size: clamp(64px, 12.5vw, 240px);
+  font-size: clamp(64px, 11vw, 210px);
   font-weight: 400;
   line-height: .8;
-  letter-spacing: -.01em;
+  letter-spacing: -.02em;
   text-transform: uppercase;
   white-space: nowrap;
-  transform: translateY(14%);
   position: relative;
-  z-index: 30;
+  z-index: 10;
 }
 
 /* ---------- about ---------- */
@@ -296,10 +295,11 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
 .stat-num { font-size: clamp(28px, 7vw, 56px); line-height: 1; }
 
 .stat-label {
-  font-size: 12px;
-  letter-spacing: .05em;
+  font-size: 11px;
+  letter-spacing: .03em;
   text-transform: uppercase;
   margin-top: 6px;
+  white-space: nowrap;
 }
 
 .stacklabel {
@@ -394,8 +394,7 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   white-space: nowrap;
 }
 
-.rows:hover .row { opacity: .4; }
-.rows:hover .row:hover { opacity: 1; }
+.rows:has(.row:hover) .row:not(:hover) { opacity: .6; }
 
 .row { transition: opacity .25s ease; }
 
@@ -431,9 +430,22 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-bottom: 120px;
+}
+
+.lab-label {
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin-bottom: 28px;
+  text-shadow: 0 0 12px rgba(0, 0, 0, .6);
+  position: relative;
+  z-index: 2;
 }
 
 .lab-words span {
@@ -445,6 +457,7 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   text-transform: uppercase;
   color: var(--paper);
   opacity: .85;
+  text-shadow: 0 0 12px rgba(0, 0, 0, .6);
 }
 
 .portal {
@@ -466,6 +479,7 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--paper);
+  text-shadow: 0 0 12px rgba(0, 0, 0, .6);
 }
 
 .portal-box {

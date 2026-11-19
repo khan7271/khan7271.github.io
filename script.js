@@ -8,6 +8,7 @@
 
   function scramble(el, text) {
     if (reduceMotion || !el) { if (el) el.textContent = text; return; }
+    if (el.children.length) return;
     var len = text.length, start = null, dur = 700;
     function frame(ts) {
       if (!start) start = ts;
@@ -74,7 +75,7 @@
   var canvas = document.getElementById('pinwheel');
   var ctx = canvas && canvas.getContext('2d');
   if (ctx) {
-    var W = 0, H = 0, DPR = 1, angle = 0, progress = 0;
+    var W = 0, H = 0, DPR = 1, angle = 0;
 
     function resize() {
       DPR = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -99,8 +100,18 @@
     gctx.putImageData(img, 0, 0);
     var grainPat = ctx.createPattern(grain, 'repeat');
 
-    /* palette keyframes: teal, deep teal, black at the lab, teal again at contact */
-    var stops = [[0, '#50b0a8'], [0.55, '#1a5c56'], [0.8, '#000000'], [0.93, '#000000'], [1, '#50b0a8']];
+    /* palette follows the lab: teal everywhere, deep teal to black only while
+       the lab covers the viewport, teal again at contact */
+    var labEl = document.getElementById('lab');
+    var smoothCover = 0;
+
+    function labCover() {
+      if (!labEl) return 0;
+      var r = labEl.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var top = Math.max(r.top, 0), bottom = Math.min(r.bottom, vh);
+      return Math.min(1, Math.max(0, (bottom - top) / vh));
+    }
 
     function hexRgb(h) {
       return [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
@@ -113,18 +124,13 @@
         Math.round(A[2] + (B[2] - A[2]) * t) + ')';
     }
 
-    function baseColor(p) {
-      for (var i = 0; i < stops.length - 1; i++) {
-        if (p <= stops[i + 1][0]) {
-          var t = (p - stops[i][0]) / (stops[i + 1][0] - stops[i][0]);
-          return lerpColor(stops[i][1], stops[i + 1][1], t);
-        }
-      }
-      return stops[stops.length - 1][1];
+    function baseColor(c) {
+      if (c < 0.5) return lerpColor('#50b0a8', '#0d3a36', c * 2);
+      return lerpColor('#0d3a36', '#000000', (c - 0.5) * 2);
     }
 
     function draw() {
-      var p = progress;
+      var p = smoothCover;
       ctx.fillStyle = baseColor(p);
       ctx.fillRect(0, 0, W, H);
 
@@ -137,7 +143,7 @@
 
       /* six tapered beams from the viewport centre, slowly rotating */
       var cx = W / 2, cy = H / 2, R = Math.max(W, H) * 0.75;
-      var pink = 0.32 + 0.38 * p;
+      var pink = 0.26 + 0.34 * p;
       ctx.save();
       ctx.translate(cx, cy);
       ctx.rotate(angle);
@@ -170,9 +176,8 @@
 
     function tick() {
       if (!reduceMotion) angle += 0.00035;
-      var doc = document.documentElement;
-      var max = doc.scrollHeight - window.innerHeight;
-      progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      var cover = labCover();
+      smoothCover += (cover - smoothCover) * 0.08;
       draw();
       requestAnimationFrame(tick);
     }
