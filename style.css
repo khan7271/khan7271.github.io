@@ -250,6 +250,7 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   white-space: nowrap;
   position: relative;
   z-index: 10;
+  transition: opacity .15s linear;
 }
 
 /* ---------- about ---------- */

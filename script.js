@@ -300,15 +300,16 @@
   /* ---------- glimpses card tilt ---------- */
   var glimpse = document.querySelector('.glimpse');
   var glimpseCard = document.getElementById('glimpseCard');
-  if (glimpse && glimpseCard && window.matchMedia('(pointer: fine)').matches && !reduceMotion) {
-    glimpse.addEventListener('mousemove', function (e) {
-      var r = glimpse.getBoundingClientRect();
-      var x = (e.clientX - r.left) / r.width - 0.5;
-      var y = (e.clientY - r.top) / r.height - 0.5;
-      glimpseCard.style.transform = 'perspective(700px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg)';
-    });
-    glimpse.addEventListener('mouseleave', function () {
-      glimpseCard.style.transform = '';
-    });
+  /* ---------- giant word fades out as it nears the fixed header ---------- */
+  var giantEl = document.querySelector('.giant');
+  function updateGiantFade() {
+    if (!giantEl) return;
+    var r = giantEl.getBoundingClientRect();
+    var op = 1;
+    if (r.top < 180) op = Math.max(0, Math.min(1, r.top / 180));
+    giantEl.style.opacity = op;
   }
+  window.addEventListener('scroll', updateGiantFade, { passive: true });
+  window.addEventListener('resize', updateGiantFade);
+  updateGiantFade();
 })();
