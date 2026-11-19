@@ -74,6 +74,7 @@ footer.chrome {
   text-transform: uppercase;
   letter-spacing: inherit;
   cursor: pointer;
+  text-shadow: 0 0 10px var(--teal), 0 0 4px var(--teal);
 }
 
 .chrome-mid { text-align: center; }
@@ -96,7 +97,10 @@ footer.chrome {
 
 body.dark-chrome .chrome a,
 body.dark-chrome .chrome p,
-body.dark-chrome .chrome button { color: var(--paper); }
+body.dark-chrome .chrome button {
+  color: var(--paper);
+  text-shadow: 0 0 10px rgba(0, 0, 0, .85), 0 0 4px rgba(0, 0, 0, .85);
+}
 
 body.detail-open .chrome { display: none; }
 
@@ -394,7 +398,7 @@ body.dark-chrome .copy-email:hover { background: var(--paper); color: var(--ink)
   white-space: nowrap;
 }
 
-.rows:has(.row:hover) .row:not(:hover) { opacity: .6; }
+.rows:has(.row:hover) .row:not(:hover) { opacity: .8; }
 
 .row { transition: opacity .25s ease; }
 
